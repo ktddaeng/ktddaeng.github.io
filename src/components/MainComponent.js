@@ -17,8 +17,8 @@ function Main(props) {
     <div>
       <Header/>
       <Switch>
-        <Route path="/archive" component={Archive} />
-        <Route path="/" component={HomePage} />
+        <Route exact path="/archive" component={Archive} />
+        <Route exact path="/" component={HomePage} />
         <Redirect to="/"/>
       </Switch>
       <Footer/>
