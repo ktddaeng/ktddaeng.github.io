@@ -3,7 +3,7 @@ import '../demo.css';
 
 function About(props) {
   return (
-    <div className="dum dumAbout p-5" id="about">
+    <div className="dum dumAbout" id="about">
       <p>About Component Here</p>
     </div>
   );

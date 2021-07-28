@@ -3,6 +3,7 @@ the components */
 
 .dum {
   min-height: 1000px;
+  scroll-margin-top: 3em;
 }
 
 .dumHeader {
