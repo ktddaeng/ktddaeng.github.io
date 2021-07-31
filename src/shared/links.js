@@ -1,3 +1,4 @@
+// data for the links listed in contacts component
 export const LINKS =
 [
   {
