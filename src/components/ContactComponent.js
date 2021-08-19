@@ -3,13 +3,15 @@ import '../demo.css';
 import { LINKS } from '../shared/links';
 import { BLURBS } from '../shared/blurb';
 import clsx from 'clsx';
-import { LoremIpsum, Avatar } from 'react-lorem-ipsum';
+import { LoremIpsum } from 'react-lorem-ipsum';
 
-function Contact(props) {
-  //makes a uniformly formatted button for each link
+function Contact() {
+  //makes a uniform button for each link
   const linklist = LINKS.map((buttonlink) => {
     return (
-      <a className="btn btn-outline-light" href={buttonlink.url}>
+      <a className="btn btn-outline-light"
+        href={buttonlink.url}
+        key={buttonlink.id}>
         <i className={clsx("me-2", buttonlink.icon)}></i>
         {buttonlink.name}
       </a>

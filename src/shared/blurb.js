@@ -15,7 +15,7 @@ export const BLURBS = {
   },
   skills: {
     header: 'My Expertise',
-    filter: 'Filter by Discipline'
+    filter: 'Filter by Discipline',
   },
   exp: {
     header: 'Work Experience'

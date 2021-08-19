@@ -5,7 +5,7 @@ import Contact from './ContactComponent.js';
 import Experience from './ExpComponent.js';
 import Portfolio from './Portfolio.js';
 
-function Home(props) {
+function Home() {
   return (
     <div id="home">
       <Landing/>

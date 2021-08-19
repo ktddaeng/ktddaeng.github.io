@@ -1,7 +1,7 @@
 import React from 'react';
 import '../demo.css';
 
-function Header(props) {
+function Header() {
 
   return (
     <div className="fixed-top">
@@ -22,7 +22,7 @@ function Header(props) {
               <a className="nav-link" href="/#portfolio">Portfolio</a>
               <a className="nav-link" href="/#contact">Contact</a>
               <a className="nav-link" href="/archive">Archive</a>
-              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Resume</a>
+              <a className="nav-link disabled" href="/resumelink" tabIndex="-1" aria-disabled="true">Resume</a>
             </div>
           </div>
         </div>

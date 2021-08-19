@@ -4,7 +4,7 @@ import Skills from './SkillsComponent.js';
 import { BLURBS } from '../shared/blurb';
 import { LoremIpsum, Avatar } from 'react-lorem-ipsum';
 
-function About(props) {
+function About() {
   return (
     <div className="dum dumAbout" id="about">
       <h1>{BLURBS.about.header}</h1>

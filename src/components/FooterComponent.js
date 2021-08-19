@@ -1,7 +1,7 @@
 import React from 'react';
 import '../demo.css';
 
-function Footer(props) {
+function Footer() {
   return (
     <div className="dumFooter">
       [logo or icon here]

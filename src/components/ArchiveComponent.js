@@ -2,7 +2,8 @@ import React from 'react';
 import '../demo.css';
 import { PROJECTS } from '../shared/projects';
 
-function Archive(props) {
+function Archive() {
+  //makes a uniform card for each project
   const projects = PROJECTS.map((project) => {
     return (
       <div className="card bg-dark" id={project.id}>

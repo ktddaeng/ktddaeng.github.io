@@ -1,7 +1,7 @@
 import React from 'react';
 import '../demo.css';
 
-function Portfolio(props) {
+function Portfolio() {
   return (
     <div className="dum dumSkills" id="portfolio">
       <p>Portfolio Component Here</p>

@@ -6,7 +6,7 @@ import Footer from './FooterComponent';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 
-function Main(props) {
+function Main() {
   const HomePage = () => {
     return (
       <Home/>
