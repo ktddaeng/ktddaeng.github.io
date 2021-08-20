@@ -4,7 +4,7 @@ export const PROJECTS = [
   {
     id: 0,
     name: 'Price Checker App',
-    date: '2222',
+    date: '2018',
     description: '',
     url_github: '',
     url_demo: '',

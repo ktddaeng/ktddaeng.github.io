@@ -3,7 +3,7 @@ the components */
 
 .dum {
   min-height: 1000px;
-  scroll-margin-top: 3em;
+  scroll-margin-top: 4em;
 }
 
 .dumHeader {
@@ -35,6 +35,7 @@ the components */
 }
 
 .dumArchive {
+  margin-top: 70px;
   background-color: #0C637F;
   color: white;
 }

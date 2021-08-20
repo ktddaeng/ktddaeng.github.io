@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Main from './components/MainComponent';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <Main />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

@@ -5,7 +5,7 @@ function Header() {
 
   return (
     <div className="fixed-top">
-      <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/#home">KD</a>
           <button className="navbar-toggler"

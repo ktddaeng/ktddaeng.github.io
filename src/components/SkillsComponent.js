@@ -9,6 +9,7 @@ function Skills() {
 
   //function to filter items using some()
   function search(items) {
+    console.log("obtaining new results " + skillParam);
     if (skillParam === "all") {
       return items;
     }
@@ -40,15 +41,23 @@ function Skills() {
 
   //makes uniform button object for each discipline
   const skillbuttons = SKILLS.categories.map((disc) => {
+    // return (
+    //   <div className="btn btn-primary btn-skill"
+    //     role="button" buttonname={disc.name} key={disc.id} data-bs-toggle="button"
+    //     onClick={(e) => {
+    //       if (skillParam !== e.target.getAttribute('buttonname')) {
+    //         setSkillParam (e.target.getAttribute('buttonname'))
+    //       }
+    //     }}>
+    //     {disc.display}
+    //   </div>
+    // );
     return (
-      <div className="btn btn-primary"
-        role="button" buttonname={disc.name} key={disc.id}
-        onClick={(e) => {
-          if (skillParam != e.target.getAttribute('buttonname')) {
-            setSkillParam (e.target.getAttribute('buttonname'))
-          }
-        }}>
-        {disc.display}
+      <div className="form-check-inline" key={disc.id}>
+        <input type="radio" className="btn-check" name="skillbtn"
+          value={disc.name} id={"skillbtn" + disc.name}
+          onChange={(e) => { setSkillParam(e.target.value) }}/>
+        <label className="btn btn-primary" htmlFor={"skillbtn" + disc.name}>{disc.display}</label>
       </div>
     );
   });
@@ -65,7 +74,11 @@ function Skills() {
         Only visible on smaller/medium screens*/}
       <select className="d-md-none" name="disciplines" id="select-disc"
         aria-label="Filter by Discipline"
-        onChange={(e) => { setSkillParam(e.target.value) }}
+        value={skillParam}
+        onChange={(e) => {
+          setSkillParam(e.target.value)
+          document.getElementById("skillbtn" + e.target.value).checked = true;
+        }}
         >
         {skilldrops}
       </select>
