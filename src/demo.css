@@ -44,4 +44,18 @@ the components */
   background-color: #073B4C;
   color: white;
 }
+
+/* adds an interpunct after each tag in the tags section for projects */
+/* .tag:not(:last-child):after {
+  content: '·';
+  color: white;
+} */
+
+.tag {
+  font-size: 0.75em;
+  border-radius: 3px;
+  border: 1px solid gray;
+  text-transform: uppercase;
+}
+
 /* probably important stuff that needs to be kept */

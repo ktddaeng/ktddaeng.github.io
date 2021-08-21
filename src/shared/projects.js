@@ -5,9 +5,15 @@ export const PROJECTS = [
     id: 0,
     name: 'Price Checker App',
     date: '2018',
-    description: '',
-    url_github: '',
-    url_demo: '',
+    company: 'Gift N Party',
+    description: 'An Android application that identifies products within a DBF inventory and returns the price. Made to improve points of service for small businesses.',
+    urls: [
+      {
+        label: 'Github',
+        icon: 'bi-github',
+        href: 'https://github.com/ktddaeng/dbfpricecheck'
+      }
+    ],
     discipline: 'mobile',
     skills: ['Android', 'Java']
   },
@@ -15,9 +21,20 @@ export const PROJECTS = [
     id: 1,
     name: 'Personal Website',
     date: '2021',
-    description: '',
-    url_github: '',
-    url_demo: '',
+    company: 'Personal Project',
+    description: 'An online resume and portfolio website for myself.',
+    urls: [
+      {
+        label: 'Github',
+        icon: 'bi-github',
+        href: 'https://github.com/ktddaeng/ktddaeng.github.io'
+      },
+      {
+        label: 'Demo',
+        icon: 'bi-box-arrow-up-right',
+        href: 'https://ktddaeng.github.io/'
+      }
+    ],
     discipline: 'web',
     skills: ['React', 'Node.js', 'Bootstrap', 'Sass', 'Figma']
   },
@@ -25,9 +42,15 @@ export const PROJECTS = [
     id: 2,
     name: 'Java HTML Parser',
     date: '2018',
-    description: '',
-    url_github: '',
-    url_demo: '',
+    company: 'Gift N Party',
+    description: 'A web scraping application parses the HTML of order forms from the carts of wholesale merchandise sites and exports them into a CSV file for easy reading and record-keeping.',
+    urls: [
+      {
+        label: 'Github',
+        icon: 'bi-github',
+        href: 'https://github.com/ktddaeng/javahtmlparser'
+      }
+    ],
     discipline: 'soft',
     skills: ['Java']
   },
@@ -35,10 +58,16 @@ export const PROJECTS = [
     id: 3,
     name: 'Beyond the Scene: We Are Bulletproof',
     date: '2018',
+    company: 'Personal Project',
     description: 'A video essay series highlighting the background and past hardships of each member of BTS. Intended to be an introduction to BTS for new fans.',
-    url_github: '',
-    url_demo: '',
+    urls: [
+      {
+        label: 'YouTube',
+        icon: 'bi-play-btn',
+        href: 'https://www.youtube.com/playlist?list=PLlUCISPLKaSmS6Oafbaku_9KMWV0tb8kB'
+      }
+    ],
     discipline: 'media',
-    skills: ['Premiere Pro', 'Photoshop']
+    skills: ['Premiere Pro', 'Photoshop', 'Audition']
   }
 ];

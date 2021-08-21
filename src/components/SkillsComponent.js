@@ -20,9 +20,9 @@ function Skills() {
   }
 
   //makes a uniform card for each skill
-  const skills = search(SKILLS.skills).map((skill) => {
+  const skills = search(SKILLS.skills).map((skill, i) => {
     return (
-      <div className="card bg-dark col-sm-5" key={skill.id}>
+      <div className="card bg-dark col-sm-5" key={i}>
         <p>
           {skill.name}
         </p>
@@ -31,16 +31,16 @@ function Skills() {
   });
 
   //makes uniform option object for each discipline
-  const skilldrops = SKILLS.categories.map((disc) => {
+  const skilldrops = SKILLS.categories.map((disc, i) => {
     return (
-      <option value={disc.name} key={disc.id}>
+      <option value={disc.name} key={i}>
         {disc.display}
       </option>
     );
   });
 
   //makes uniform button object for each discipline
-  const skillbuttons = SKILLS.categories.map((disc) => {
+  const skillbuttons = SKILLS.categories.map((disc, i) => {
     // return (
     //   <div className="btn btn-primary btn-skill"
     //     role="button" buttonname={disc.name} key={disc.id} data-bs-toggle="button"
@@ -53,7 +53,7 @@ function Skills() {
     //   </div>
     // );
     return (
-      <div className="form-check-inline" key={disc.id}>
+      <div className="form-check-inline" key={i}>
         <input type="radio" className="btn-check" name="skillbtn"
           value={disc.name} id={"skillbtn" + disc.name}
           onChange={(e) => { setSkillParam(e.target.value) }}/>
