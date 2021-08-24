@@ -6,13 +6,15 @@ import { SKILLS } from '../shared/skills';
 import clsx from 'clsx';
 
 function Archive() {
-  //function to bring out filtering tray and process results filtering
-  function filterResults() {
-    console.log("opening filtering tray");
+  //function to process results filtering
+  function handleSubmit(e) {
+    console.log(e);
   }
 
   //makes a uniform card for each project
   const projects = PROJECTS.map((project) => {
+    //if empty then return a "no results" message
+    
     return (
       <div className="card bg-dark m-2 p-2" key={project.id} id={project.id}>
         <div className="d-flex">
@@ -40,18 +42,81 @@ function Archive() {
     );
   });
 
+  //makes uniform button for filtering tray
+  //puts filter button at top and bottom in case of overflow
+  const filterbutton =
+  <div className="btn btn-outline-light" type="submit" role="button"
+    data-bs-dismiss="offcanvas"
+    onClick={handleSubmit}>
+      Filter Results
+  </div>;
+
+  //makes uniform radio buttons for filtering disciplines
+  const radiodiscipline = SKILLS.categories.map((skill, i) => {
+    return (
+      <div key={i}>
+        <input type="radio"
+          id={skill.name}
+          name="filterdiscipline"/>
+        <label htmlFor={skill.name}>
+          {skill.display}
+        </label>
+      </div>
+    );
+  });
+
+  //makes uniform check list for filtering core skills
+  const checkskills = SKILLS.skills.map((skill, i) => {
+    return (
+      <div key={i}>
+        <input type="checkbox"
+          name="filterskill"/>
+        <label htmlFor={skill.name}
+          value={skill.name}>
+          {skill.name}
+        </label>
+      </div>
+    );
+  });
+
   return (
     <div className="dum dumArchive">
       <div className="d-flex flex-row justify-content-between">
         <h2>{BLURBS.archive.header}</h2>
-        <div className="btn btn-outline-light btn-skill" role="button"
-          onClick={filterResults}>
+        <div className="btn btn-outline-light btn-skill"
+          role="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvas"
+          aria-controls="offcanvas">
           <i className={clsx("me-2", "bi-funnel")}></i>
           Filter
         </div>
       </div>
       <div className="card-deck">
         {projects}
+      </div>
+      <div className="offcanvas offcanvas-end bg-dark"
+        tabIndex="-1" id="offcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div className="offcanvas-header">
+          <h5 className="offcanvas-title" id="offcanvasLabel">Filter Projects</h5>
+          <button type="button"
+            className="btn-close btn-close-white text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <form className="offcanvas-body">
+          {filterbutton}
+          <h6>By Discipline</h6>
+          <div className="form-check">
+            {radiodiscipline}
+          </div>
+          <h6>By Core Skills</h6>
+          <div className="form-check">
+            {checkskills}
+          </div>
+          {filterbutton}
+        </form>
       </div>
     </div>
   );
