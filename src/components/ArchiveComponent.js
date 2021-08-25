@@ -8,13 +8,23 @@ import clsx from 'clsx';
 function Archive() {
   //function to process results filtering
   function handleSubmit(e) {
+    e.preventDefault();
     console.log(e);
+    //TODO: find way to filter results
   }
 
   //makes a uniform card for each project
-  const projects = PROJECTS.map((project) => {
-    //if empty then return a "no results" message
-    
+  const projects = PROJECTS.map((project, i) => {
+    //if empty first object then return a "no results" message
+    if (i === 0 && project == null) {
+      return (
+        <div>
+          No matching results.
+        </div>
+      );
+    }
+
+    //otherwise render proper card
     return (
       <div className="card bg-dark m-2 p-2" key={project.id} id={project.id}>
         <div className="d-flex">
@@ -46,8 +56,7 @@ function Archive() {
   //puts filter button at top and bottom in case of overflow
   const filterbutton =
   <div className="btn btn-outline-light" type="submit" role="button"
-    data-bs-dismiss="offcanvas"
-    onClick={handleSubmit}>
+    data-bs-dismiss="offcanvas" onclick={handleSubmit}>
       Filter Results
   </div>;
 
@@ -82,7 +91,7 @@ function Archive() {
   return (
     <div className="dum dumArchive">
       <div className="d-flex flex-row justify-content-between">
-        <h2>{BLURBS.archive.header}</h2>
+        <h2 className="display-3">{BLURBS.archive.header}</h2>
         <div className="btn btn-outline-light btn-skill"
           role="button"
           data-bs-toggle="offcanvas"
@@ -105,18 +114,18 @@ function Archive() {
             data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
         </div>
-        <form className="offcanvas-body">
+        <div className="offcanvas-body">
           {filterbutton}
           <h6>By Discipline</h6>
           <div className="form-check">
             {radiodiscipline}
           </div>
-          <h6>By Core Skills</h6>
+          <h6>By Skills</h6>
           <div className="form-check">
             {checkskills}
           </div>
           {filterbutton}
-        </form>
+        </div>
       </div>
     </div>
   );

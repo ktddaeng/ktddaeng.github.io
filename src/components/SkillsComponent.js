@@ -63,8 +63,8 @@ function Skills() {
   });
 
   return (
-    <div className="dum dumSkills" id="skills">
-      <h2>{BLURBS.skills.header}</h2>
+    <div className="dumSkills" id="skills">
+      <h2 className="display-3">{BLURBS.skills.header}</h2>
       {/* Button select to filter skills.
         Only visible for larger screens*/}
       <div className="d-none d-md-block .d-lg-none .d-xl-none">

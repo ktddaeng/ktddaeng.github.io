@@ -1,10 +1,47 @@
 import React from 'react';
 import '../demo.css';
+import { BLURBS } from '../shared/blurb';
+import { EXPERIENCES } from '../shared/exp';
 
 function Experience() {
+
+  //makes a uniform accordion item
+  const experiences = EXPERIENCES.map((exp, i) => {
+    return (
+      <div className="accordion-item" key={i}>
+        <h2 className="accordion-header" id={"heading" + exp.name}>
+          <button className="accordion-button" type="button"
+            data-bs-toggle="collapse" data-bs-target={"#" + exp.name}
+            aria-expanded="false" aria-controls={exp.name}
+            >
+            {exp.company}
+          </button>
+        </h2>
+        <div id={exp.name} className="accordion-collapse collapse"
+          aria-labelledby={"heading" + exp.name}
+          data-bs-parent="#expAccordion">
+          <div className="accordion-body bg-dark">
+            <h3>{exp.title} | {exp.company}</h3>
+            <h6>{exp.year_start} - {exp.year_end}</h6>
+            <ul>
+            {exp.description.map((bullet, j) => {
+              return (
+                <li key={j}>{bullet}</li>
+              )
+            })}
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  });
+
   return (
-    <div className="dum dumExp" id="exp">
-      <p>Experience Component Here</p>
+    <div className="dumExp" id="exp">
+      <h2 className="display-3">{BLURBS.exp.header}</h2>
+      <div className="accordion accordion-flush" id="expAccordion">
+        {experiences}
+      </div>
     </div>
   );
 }

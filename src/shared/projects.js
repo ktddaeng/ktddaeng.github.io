@@ -15,7 +15,9 @@ export const PROJECTS = [
       }
     ],
     discipline: 'mobile',
-    skills: ['Android', 'Java']
+    skills: ['Android', 'Java'],
+    featured: true,
+    image: ''
   },
   {
     id: 1,
@@ -36,7 +38,9 @@ export const PROJECTS = [
       }
     ],
     discipline: 'web',
-    skills: ['React', 'Node.js', 'Bootstrap', 'Sass', 'Figma']
+    skills: ['React', 'Node.js', 'Bootstrap', 'Sass', 'Figma'],
+    featured: false,
+    image: ''
   },
   {
     id: 2,
@@ -52,7 +56,9 @@ export const PROJECTS = [
       }
     ],
     discipline: 'soft',
-    skills: ['Java']
+    skills: ['Java'],
+    featured: true,
+    image: ''
   },
   {
     id: 3,
@@ -68,6 +74,8 @@ export const PROJECTS = [
       }
     ],
     discipline: 'media',
-    skills: ['Premiere Pro', 'Photoshop', 'Audition']
+    skills: ['Premiere Pro', 'Photoshop', 'Audition'],
+    featured: false,
+    image: ''
   }
 ];

@@ -6,8 +6,8 @@ import { LoremIpsum, Avatar } from 'react-lorem-ipsum';
 
 function About() {
   return (
-    <div className="dum dumAbout" id="about">
-      <h1>{BLURBS.about.header}</h1>
+    <div className="dumAbout" id="about">
+      <h1 className="display-3">{BLURBS.about.header}</h1>
       <Avatar gender="female"/>
       <LoremIpsum p={2} avgSentencesPerParagraph={6}/>
       <Skills/>

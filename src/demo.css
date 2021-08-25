@@ -58,4 +58,9 @@ the components */
   text-transform: uppercase;
 }
 
+.card img {
+  max-width: 300px;
+  height: auto;
+}
+
 /* probably important stuff that needs to be kept */

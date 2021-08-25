@@ -19,8 +19,8 @@ function Contact() {
   });
 
   return (
-    <div className="dum dumContact" id="contact">
-      <h1>{BLURBS.contact.header}</h1>
+    <div className="dumContact" id="contact">
+      <h1 className="display-3">{BLURBS.contact.header}</h1>
       <LoremIpsum avgSentencesPerParagraph={4}/>
       <div className="d-grid gap-2 d-md-block">
         {linklist}
