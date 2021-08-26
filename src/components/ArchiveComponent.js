@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../demo.css';
 import { PROJECTS } from '../shared/projects';
 import { BLURBS } from '../shared/blurb';
 import { SKILLS } from '../shared/skills';
-import clsx from 'clsx';
+import { searchItems } from '../shared/utils';
+// import clsx from 'clsx';
 
 function Archive() {
-  //function to process results filtering
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(e);
-    //TODO: find way to filter results
-  }
+  //default value for selection
+  const [discParam, setDiscParam] = useState("all");
 
   //makes a uniform card for each project
-  const projects = PROJECTS.map((project, i) => {
+  const projects = searchItems(PROJECTS, discParam).map((project, i) => {
     //if empty first object then return a "no results" message
     if (i === 0 && project == null) {
       return (
@@ -52,38 +49,59 @@ function Archive() {
     );
   });
 
-  //makes uniform button for filtering tray
-  //puts filter button at top and bottom in case of overflow
-  const filterbutton =
-  <div className="btn btn-outline-light" type="submit" role="button"
-    data-bs-dismiss="offcanvas" onclick={handleSubmit}>
-      Filter Results
-  </div>;
+  // //makes uniform button for filtering tray
+  // //puts filter button at top and bottom in case of overflow
+  // const filterbutton =
+  // <div className="btn btn-outline-light" type="submit" role="button"
+  //   data-bs-dismiss="offcanvas" onclick={handleSubmit}>
+  //     Filter Results
+  // </div>;
+  //
+  // //makes uniform radio buttons for filtering disciplines
+  // const radiodiscipline = SKILLS.categories.map((skill, i) => {
+  //   return (
+  //     <div key={i}>
+  //       <input type="radio"
+  //         id={skill.name}
+  //         name="filterdiscipline"/>
+  //       <label htmlFor={skill.name}>
+  //         {skill.display}
+  //       </label>
+  //     </div>
+  //   );
+  // });
+  //
+  // //makes uniform check list for filtering core skills
+  // const checkskills = SKILLS.skills.map((skill, i) => {
+  //   return (
+  //     <div key={i}>
+  //       <input type="checkbox"
+  //         name="filterskill"/>
+  //       <label htmlFor={skill.name}
+  //         value={skill.name}>
+  //         {skill.name}
+  //       </label>
+  //     </div>
+  //   );
+  // });
 
-  //makes uniform radio buttons for filtering disciplines
-  const radiodiscipline = SKILLS.categories.map((skill, i) => {
+  //makes uniform option object for each discipline
+  const skilldrops = SKILLS.categories.map((disc, i) => {
     return (
-      <div key={i}>
-        <input type="radio"
-          id={skill.name}
-          name="filterdiscipline"/>
-        <label htmlFor={skill.name}>
-          {skill.display}
-        </label>
-      </div>
+      <option value={disc.name} key={i}>
+        {disc.display}
+      </option>
     );
   });
 
-  //makes uniform check list for filtering core skills
-  const checkskills = SKILLS.skills.map((skill, i) => {
+  //makes uniform button object for each discipline
+  const skillbuttons = SKILLS.categories.map((disc, i) => {
     return (
-      <div key={i}>
-        <input type="checkbox"
-          name="filterskill"/>
-        <label htmlFor={skill.name}
-          value={skill.name}>
-          {skill.name}
-        </label>
+      <div className="form-check-inline" key={i}>
+        <input type="radio" className="btn-check" name="skillbtn"
+          value={disc.name} id={"skillbtn" + disc.name}
+          onChange={(e) => { setDiscParam(e.target.value) }}/>
+        <label className="btn btn-primary" htmlFor={"skillbtn" + disc.name}>{disc.display}</label>
       </div>
     );
   });
@@ -92,18 +110,36 @@ function Archive() {
     <div className="dum dumArchive">
       <div className="d-flex flex-row justify-content-between">
         <h2 className="display-3">{BLURBS.archive.header}</h2>
-        <div className="btn btn-outline-light btn-skill"
+        {/*<div className="btn btn-outline-light btn-skill"
           role="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvas"
           aria-controls="offcanvas">
           <i className={clsx("me-2", "bi-funnel")}></i>
           Filter
-        </div>
+        </div> */}
       </div>
+      {/* Button select to filter skills.
+        Only visible for larger screens*/}
+      <div className="d-none d-md-block .d-lg-none .d-xl-none">
+        {skillbuttons}
+      </div>
+      {/* Select option to filter skills.
+        Only visible on smaller/medium screens*/}
+      <select className="d-md-none" name="disciplines" id="select-disc"
+        aria-label="Filter by Discipline"
+        value={discParam}
+        onChange={(e) => {
+          setDiscParam(e.target.value)
+          document.getElementById("skillbtn" + e.target.value).checked = true;
+        }}
+        >
+        {skilldrops}
+      </select>
       <div className="card-deck">
         {projects}
       </div>
+      {/*
       <div className="offcanvas offcanvas-end bg-dark"
         tabIndex="-1" id="offcanvas"
         aria-labelledby="offcanvasLabel">
@@ -126,7 +162,7 @@ function Archive() {
           </div>
           {filterbutton}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

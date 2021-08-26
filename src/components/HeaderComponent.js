@@ -1,18 +1,20 @@
 import React from 'react';
 import '../demo.css';
+import Headroom from 'react-headroom';
 
 function Header() {
 
   return (
-    <div className="fixed-top">
+    <div>
+      <Headroom>
       <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/#home">KD</a>
+          <a className="navbar-brand" href="/#home">&lt;kd&gt;</a>
           <button className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas"
+            aria-controls="offcanvas" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
@@ -21,12 +23,29 @@ function Header() {
               <a className="nav-link" href="/#exp">Experience</a>
               <a className="nav-link" href="/#portfolio">Portfolio</a>
               <a className="nav-link" href="/#contact">Contact</a>
-              <a className="nav-link" href="/archive">Archive</a>
-              <a className="nav-link disabled" href="/resumelink" tabIndex="-1" aria-disabled="true">Resume</a>
+              <a className="link-square" href="/resumelink" tabIndex="-1" aria-disabled="true"><span>Resume</span></a>
             </div>
           </div>
         </div>
       </nav>
+      </Headroom>
+      <div className="offcanvas offcanvas-end bg-dark"
+        tabIndex="-1" id="offcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div className="offcanvas-header d-flex flex-row-reverse">
+          <button type="button"
+            className="btn-close btn-close-white text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div className="offcanvas-body">
+          <div><a href="/#about">About</a></div>
+          <a href="/#exp">Experience</a>
+          <a href="/#portfolio">Portfolio</a>
+          <a href="/#contact">Contact</a>
+          <a className="disabled" href="/resumelink" tabIndex="-1" aria-disabled="true">Resume</a>
+        </div>
+      </div>
     </div>
   );
 }

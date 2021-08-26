@@ -3,9 +3,8 @@ import '../demo.css';
 
 function Landing() {
   return (
-    <div className="dumLanding">
+    <div className="compLanding dumLanding">
       <p>Landing Component Here</p>
-      <div className="dum"></div>
       <div className="display-3">
         <a href="#about">
           <i className="bi-arrow-down-circle"></i>

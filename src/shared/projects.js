@@ -14,7 +14,7 @@ export const PROJECTS = [
         href: 'https://github.com/ktddaeng/dbfpricecheck'
       }
     ],
-    discipline: 'mobile',
+    discipline: 'webmob',
     skills: ['Android', 'Java'],
     featured: true,
     image: ''
@@ -37,7 +37,7 @@ export const PROJECTS = [
         href: 'https://ktddaeng.github.io/'
       }
     ],
-    discipline: 'web',
+    discipline: 'webmob',
     skills: ['React', 'Node.js', 'Bootstrap', 'Sass', 'Figma'],
     featured: false,
     image: ''

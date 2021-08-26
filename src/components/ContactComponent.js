@@ -9,11 +9,13 @@ function Contact() {
   //makes a uniform button for each link
   const linklist = LINKS.map((buttonlink) => {
     return (
-      <a className="btn btn-outline-light"
+      <a className="link-square"
         href={buttonlink.url}
         key={buttonlink.id}>
-        <i className={clsx("me-2", buttonlink.icon)}></i>
-        {buttonlink.name}
+        <span>
+          <i className={clsx("me-2", buttonlink.icon)}></i>
+          {buttonlink.name}
+        </span>
       </a>
     );
   });
@@ -22,7 +24,7 @@ function Contact() {
     <div className="dumContact" id="contact">
       <h1 className="display-3">{BLURBS.contact.header}</h1>
       <LoremIpsum avgSentencesPerParagraph={4}/>
-      <div className="d-grid gap-2 d-md-block">
+      <div className="d-grid gap-2 text-center">
         {linklist}
       </div>
     </div>

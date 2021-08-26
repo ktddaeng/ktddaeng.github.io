@@ -2,7 +2,6 @@ import React from 'react';
 import '../demo.css';
 import { BLURBS } from '../shared/blurb';
 import { PROJECTS } from '../shared/projects';
-import { Avatar } from 'react-lorem-ipsum';
 
 function Portfolio() {
 
@@ -40,12 +39,12 @@ function Portfolio() {
   });
 
   return (
-    <div className="dumSkills" id="portfolio">
+    <div className="dumSkills pb-3" id="portfolio">
       <h1 className="display-3">{BLURBS.projects.header}</h1>
       <div>
         {featprojects}
       </div>
-      <h6><a href="/archive">Check out my full portfolio</a></h6>
+      <div className="text-center"><a className="archive-link pb-2" href="/archive">Check out my full portfolio</a></div>
     </div>
   );
 }

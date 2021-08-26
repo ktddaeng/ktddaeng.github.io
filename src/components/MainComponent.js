@@ -16,10 +16,12 @@ function Main() {
   return (
     <div>
       <Header/>
-      <Switch>
-        <Route exact path="/archive" component={Archive} />
-        <Route exact path="/" component={HomePage} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route exact path="/archive" component={Archive} />
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+      </div>
       <Footer/>
     </div>
   );

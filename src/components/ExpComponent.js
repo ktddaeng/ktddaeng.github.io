@@ -10,14 +10,14 @@ function Experience() {
     return (
       <div className="accordion-item" key={i}>
         <h2 className="accordion-header" id={"heading" + exp.name}>
-          <button className="accordion-button" type="button"
-            data-bs-toggle="collapse" data-bs-target={"#" + exp.name}
+          <button className={"accordion-button" + (i > 0 ? ' collapsed' : '')}
+            data-bs-toggle="collapse" data-bs-target={"#" + exp.name} type="button"
             aria-expanded="false" aria-controls={exp.name}
             >
             {exp.company}
           </button>
         </h2>
-        <div id={exp.name} className="accordion-collapse collapse"
+        <div id={exp.name} className={"accordion-collapse collapse" + (i == 0 ? ' show' : '')}
           aria-labelledby={"heading" + exp.name}
           data-bs-parent="#expAccordion">
           <div className="accordion-body bg-dark">
