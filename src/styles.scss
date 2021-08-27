@@ -1,9 +1,31 @@
 /*********************************************/
+/*        VARIABLES        */
+/*********************************************/
+$accent1:                           #a00;
+$transitionshort:                   0.3s;
+$transitionlong:                    0.5s;
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  -ms-transition: $duration;
+  -o-transition: $duration;
+  transition: $duration;
+}
+
+/*********************************************/
 /*        VARIABLE OVERRIDES        */
 /*********************************************/
-$offcanvas-horizontal-width:        300px;
+$body-color:                        #ddd;
 $btn-close-height:                  2em;
 $btn-close-width:                   2em;
+$offcanvas-horizontal-width:        300px;
+
+//fontface
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+$font-family-base:                  "Roboto", Helvetica, Arial, sans-serif;
+$headings-font-family:              "Roboto Slab", serif;
+$headings-font-weight:              100;
 
 /*********************************************/
 /*        IMPORTS        */
@@ -15,10 +37,6 @@ $btn-close-width:                   2em;
 /*        CUSTOM CLASSES        */
 /*********************************************/
 
-body, html {
-  font: 14px/1.4 'Open Sans', arial, sans-serif;
-}
-
 //links (non-icon)
 .nav-link, .archive-link, .skill-button {
   text-decoration: none;
@@ -26,7 +44,6 @@ body, html {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   position: relative;
-  transition: 0.3s;
 
   &::before {
     content: "";
@@ -36,14 +53,14 @@ body, html {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #a00;
+    background-color: $accent1;
     transform: scaleX(0);
     transform-origin: top left;
     transition: transform 0.3s ease;
   }
 
   &:hover {
-    color: #a00;
+    color: $accent1;
   }
 
   &:hover::before {
@@ -56,37 +73,22 @@ body, html {
   -webkit-transition: color 0.3s;
 }
 .skill-button input:checked + label {
-  color: #a00;
+  color: $accent1;
 }
 
 //square button
-// .btn {
-//   color: white;
-//
-//   background: linear-gradient(to right, black 50%, white 50%);
-//   background-size: 200% 100%;
-//   background-position: right bottom;
-//   transition: all .5s ease-out;
-//
-//   &:hover {
-//     color: #a00;
-//     background-position: left bottom;
-//   }
-//
-//   a:hover:after {
-//     width: 100%;
-//   }
-// }
-.link-square {
-  display: block;
+.link-square-shape {
   height: 40px;
   width: 150px;
   line-height: 40px;
+  display: block;
+}
+.link-square {
   letter-spacing: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  color: #ddd;
+  color: $body-color;
   transition: all 0.3s;
   position: relative;
 
@@ -101,7 +103,7 @@ body, html {
     left: 0;
     width: 0;
     height: 100%;
-    background: #a00;
+    background: $accent1;
     transition: all .35s;
   }
 
@@ -115,7 +117,18 @@ body, html {
   }
 }
 
+//Header component
+.navbar-brand {
+  color: $accent1;
+}
+
 //Landing component
 .compLanding {
   height: 100vh;
+}
+
+//Footer component
+.compFooter h6 a {
+  letter-spacing: 0em;
+  text-transform: none;
 }

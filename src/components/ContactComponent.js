@@ -9,7 +9,7 @@ function Contact() {
   //makes a uniform button for each link
   const linklist = LINKS.map((buttonlink) => {
     return (
-      <a className="link-square"
+      <a className="link-square link-square-shape"
         href={buttonlink.url}
         key={buttonlink.id}>
         <span>

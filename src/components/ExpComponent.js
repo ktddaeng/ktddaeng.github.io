@@ -9,14 +9,14 @@ function Experience() {
   const experiences = EXPERIENCES.map((exp, i) => {
     return (
       <div className="accordion-item" key={i}>
-        <h2 className="accordion-header" id={"heading" + exp.name}>
+        <p className="accordion-header" id={"heading" + exp.name}>
           <button className={"accordion-button" + (i > 0 ? ' collapsed' : '')}
             data-bs-toggle="collapse" data-bs-target={"#" + exp.name} type="button"
             aria-expanded="false" aria-controls={exp.name}
             >
             {exp.company}
           </button>
-        </h2>
+        </p>
         <div id={exp.name} className={"accordion-collapse collapse" + (i == 0 ? ' show' : '')}
           aria-labelledby={"heading" + exp.name}
           data-bs-parent="#expAccordion">

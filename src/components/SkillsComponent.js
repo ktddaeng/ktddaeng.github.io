@@ -46,7 +46,7 @@ function Skills() {
       <h2 className="display-3">{BLURBS.skills.header}</h2>
       {/* Button select to filter skills.
         Only visible for larger screens*/}
-      <div className="mb-2 d-none d-md-block .d-lg-none .d-xl-none">
+      <div className="mb-2 d-none d-md-block .d-lg-none .d-xl-none text-center">
         {skillbuttons}
       </div>
       {/* Select option to filter skills.

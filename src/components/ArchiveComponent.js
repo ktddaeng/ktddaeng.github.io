@@ -121,7 +121,7 @@ function Archive() {
       </div>
       {/* Button select to filter skills.
         Only visible for larger screens*/}
-      <div className="d-none d-md-block .d-lg-none .d-xl-none">
+      <div className="d-none d-md-block .d-lg-none .d-xl-none text-center">
         {skillbuttons}
       </div>
       {/* Select option to filter skills.

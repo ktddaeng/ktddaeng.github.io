@@ -9,7 +9,7 @@ function Header() {
       <Headroom>
       <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/#home">&lt;kd&gt;</a>
+          <a className="navbar-brand" href="/#home"><h2>&lt;kd&gt;</h2></a>
           <button className="navbar-toggler"
             type="button"
             data-bs-toggle="offcanvas"
@@ -17,7 +17,7 @@ function Header() {
             aria-controls="offcanvas" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className="collapse navbar-collapse">
             <div className="navbar-nav">
               <a className="nav-link" href="/#about">About</a>
               <a className="nav-link" href="/#exp">Experience</a>
