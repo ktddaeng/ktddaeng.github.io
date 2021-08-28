@@ -11,10 +11,8 @@ function Skills() {
   //makes a uniform card for each skill
   const skills = searchItems(SKILLS.skills, skillParam).map((skill, i) => {
     return (
-      <div className="card bg-dark" key={i}>
-        <p>
-          {skill.name}
-        </p>
+      <div className="card col-md-6 col-5 m-2 skill-card" key={i}>
+        <span className="align-middle">{skill.name}</span>
       </div>
     );
   });
@@ -63,7 +61,7 @@ function Skills() {
       </select>
       {/* Displays the list of skills that fits the screen
         according to its size*/}
-      <div className="row">
+      <div className="row justify-content-center">
         {skills}
       </div>
     </div>

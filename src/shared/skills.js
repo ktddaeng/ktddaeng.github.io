@@ -42,15 +42,15 @@ export const SKILLS = {
       discipline: ['soft']
     },
     {
-      name: 'Adobe Photoshop',
+      name: 'Photoshop',
       discipline: ['media']
     },
     {
-      name: 'Adobe Illustrator',
+      name: 'Illustrator',
       discipline: ['media']
     },
     {
-      name: 'Adobe Premiere Pro',
+      name: 'Premiere Pro',
       discipline: ['media']
     },
     {

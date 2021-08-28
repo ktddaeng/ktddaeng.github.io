@@ -1,7 +1,10 @@
 /*********************************************/
 /*        VARIABLES        */
 /*********************************************/
-$accent1:                           #a00;
+$accent1:                           #F0386B;
+$accent2:                           #59C3C3;
+$background1:                       #342E37;
+$normal1:                           #EDDDD4;
 $transitionshort:                   0.3s;
 $transitionlong:                    0.5s;
 @mixin transition($duration) {
@@ -15,17 +18,28 @@ $transitionlong:                    0.5s;
 /*********************************************/
 /*        VARIABLE OVERRIDES        */
 /*********************************************/
-$body-color:                        #ddd;
+$accordion-bg:                      $background1;
+$accordion-button-bg:               $background1;
+$accordion-border-color:            $accent2;
+$accordion-button-active-bg:        $background1;
+$accordion-button-active-color:     $accent1;
+$accordion-icon-active-color:       $accent2;
+$body-color:                        $normal1;
 $btn-close-height:                  2em;
 $btn-close-width:                   2em;
+$card-border-color:                 $normal1;
+$card-cap-bg:                       $background1;
+$card-bg:                           $background1;
+$input-focus-border-color:          $background1;
+$accordion-button-focus-box-shadow: $background1;
 $offcanvas-horizontal-width:        300px;
+$lead-font-weight:                  100;
 
 //fontface
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300&display=swap');
 $font-family-base:                  "Roboto", Helvetica, Arial, sans-serif;
 $headings-font-family:              "Roboto Slab", serif;
-$headings-font-weight:              100;
 
 /*********************************************/
 /*        IMPORTS        */
@@ -37,10 +51,19 @@ $headings-font-weight:              100;
 /*        CUSTOM CLASSES        */
 /*********************************************/
 
+body {
+  background-color: $background1;
+}
+
+//headers
+.display-3 {
+  font-weight: 100;
+}
+
 //links (non-icon)
 .nav-link, .archive-link, .skill-button {
   text-decoration: none;
-  color: #fff;
+  color: $body-color;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   position: relative;
@@ -50,7 +73,7 @@ $headings-font-weight:              100;
     position: absolute;
     display: block;
     width: 100%;
-    height: 2px;
+    height: 1px;
     bottom: 0;
     left: 0;
     background-color: $accent1;
@@ -93,7 +116,7 @@ $headings-font-weight:              100;
   position: relative;
 
   &:hover {
-    color: #fff;
+    color: white;
   }
 
   &:after {
@@ -120,11 +143,73 @@ $headings-font-weight:              100;
 //Header component
 .navbar-brand {
   color: $accent1;
+  font-weight: 300;
+  h2 {
+    transition: $transitionshort;
+
+    &:hover {
+      color: $accent2;
+    }
+  }
 }
 
 //Landing component
 .compLanding {
   height: 100vh;
+}
+
+//Skill component
+option {
+  color: $body-color;
+  padding: 0 30px 0 10px;
+  min-height: 40px;
+  background: #333;
+  border-top: #222 solid 1px;
+  transition: background $transitionshort;
+
+  &:hover {
+    background: #666;
+  }
+}
+
+.skill-card {
+  max-width: 200px;
+  line-height: 40px;
+  text-align: center;
+  transition: $transitionshort;
+
+  &:hover {
+    color: $accent2;
+    border-color: $accent2;
+  }
+}
+
+//Exp component
+.accordion {
+}
+
+//Archive/Portfolio component
+.card {
+  border-style: dashed;
+
+  img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+//pill components
+.tag {
+  font-size: 0.75em;
+  border-radius: 3px;
+  border: 1px dashed $body-color;
+  text-transform: uppercase;
+  transition: $transitionshort;
+
+  &:hover {
+    color: $accent2;
+    border: 1px dashed $accent2;
+  }
 }
 
 //Footer component

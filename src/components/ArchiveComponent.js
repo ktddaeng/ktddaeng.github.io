@@ -23,7 +23,7 @@ function Archive() {
 
     //otherwise render proper card
     return (
-      <div className="card bg-dark m-2 p-2" key={project.id} id={project.id}>
+      <div className="card m-2 p-2" key={project.id} id={project.id}>
         <div className="d-flex">
           <h3>{project.name}</h3>
           <div className="ps-2">
@@ -97,11 +97,11 @@ function Archive() {
   //makes uniform button object for each discipline
   const skillbuttons = SKILLS.categories.map((disc, i) => {
     return (
-      <div className="form-check-inline" key={i}>
+      <div className="form-check-inline skill-button" key={i}>
         <input type="radio" className="btn-check" name="skillbtn"
           value={disc.name} id={"skillbtn" + disc.name}
           onChange={(e) => { setDiscParam(e.target.value) }}/>
-        <label className="btn btn-primary" htmlFor={"skillbtn" + disc.name}>{disc.display}</label>
+        <label htmlFor={"skillbtn" + disc.name}>{disc.display}</label>
       </div>
     );
   });
@@ -119,23 +119,25 @@ function Archive() {
           Filter
         </div> */}
       </div>
-      {/* Button select to filter skills.
-        Only visible for larger screens*/}
-      <div className="d-none d-md-block .d-lg-none .d-xl-none text-center">
-        {skillbuttons}
+      <div className="my-3">      
+        {/* Button select to filter skills.
+          Only visible for larger screens*/}
+        <div className="d-none d-md-block .d-lg-none .d-xl-none text-center">
+          {skillbuttons}
+        </div>
+        {/* Select option to filter skills.
+          Only visible on smaller/medium screens*/}
+        <select className="d-md-none" name="disciplines" id="select-disc"
+          aria-label="Filter by Discipline"
+          value={discParam}
+          onChange={(e) => {
+            setDiscParam(e.target.value)
+            document.getElementById("skillbtn" + e.target.value).checked = true;
+          }}
+          >
+          {skilldrops}
+        </select>
       </div>
-      {/* Select option to filter skills.
-        Only visible on smaller/medium screens*/}
-      <select className="d-md-none" name="disciplines" id="select-disc"
-        aria-label="Filter by Discipline"
-        value={discParam}
-        onChange={(e) => {
-          setDiscParam(e.target.value)
-          document.getElementById("skillbtn" + e.target.value).checked = true;
-        }}
-        >
-        {skilldrops}
-      </select>
       <div className="card-deck">
         {projects}
       </div>

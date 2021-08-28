@@ -8,8 +8,8 @@ function About() {
   return (
     <div className="dumAbout" id="about">
       <h1 className="display-3">{BLURBS.about.header}</h1>
-      <Avatar gender="female"/>
       <LoremIpsum p={2} avgSentencesPerParagraph={6}/>
+      <Avatar gender="female"/>
       <Skills/>
     </div>
   );

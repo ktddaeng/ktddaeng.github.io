@@ -20,7 +20,7 @@ function Experience() {
         <div id={exp.name} className={"accordion-collapse collapse" + (i == 0 ? ' show' : '')}
           aria-labelledby={"heading" + exp.name}
           data-bs-parent="#expAccordion">
-          <div className="accordion-body bg-dark">
+          <div className="accordion-body">
             <h3>{exp.title} | {exp.company}</h3>
             <h6>{exp.year_start} - {exp.year_end}</h6>
             <ul>
