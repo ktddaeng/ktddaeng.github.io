@@ -67,6 +67,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   position: relative;
+  margin-right: 1em;
+  transition: $transitionshort;
 
   &::before {
     content: "";
@@ -107,6 +109,9 @@ body {
   display: block;
 }
 .link-square {
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px dashed $body-color;
   letter-spacing: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
@@ -140,10 +145,22 @@ body {
   }
 }
 
-//Header component
+//icon link
+.icon-link {
+  font-size: 1.3rem;
+  color: $body-color;
+  transition: $transitionshort;
+
+  &:hover {
+    color: $accent1;
+  }
+}
+
+//Header/Navbar component
 .navbar-brand {
   color: $accent1;
   font-weight: 300;
+  margin-left: 1em;
   h2 {
     transition: $transitionshort;
 
@@ -186,6 +203,7 @@ option {
 
 //Exp component
 .accordion {
+  max-width: 700px;
 }
 
 //Archive/Portfolio component
@@ -196,6 +214,10 @@ option {
     max-width: 300px;
     height: auto;
   }
+}
+.card-footer {
+  background: transparent;
+  border-top: 0;
 }
 
 //pill components
@@ -216,4 +238,7 @@ option {
 .compFooter h6 a {
   letter-spacing: 0em;
   text-transform: none;
+}
+.footerIcon {
+  margin-right: 0.5em;
 }

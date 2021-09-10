@@ -37,7 +37,7 @@ function Experience() {
   });
 
   return (
-    <div className="dumExp" id="exp">
+    <div className="dumExp " id="exp">
       <h2 className="display-3">{BLURBS.exp.header}</h2>
       <div className="accordion accordion-flush" id="expAccordion">
         {experiences}

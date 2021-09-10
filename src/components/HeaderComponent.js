@@ -17,13 +17,13 @@ function Header() {
             aria-controls="offcanvas" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse">
+          <div className="collapse navbar-collapse justify-content-end">
             <div className="navbar-nav">
               <a className="nav-link" href="/#about">About</a>
               <a className="nav-link" href="/#exp">Experience</a>
               <a className="nav-link" href="/#portfolio">Portfolio</a>
               <a className="nav-link" href="/#contact">Contact</a>
-              <a className="link-square" href="/resumelink" tabIndex="-1" aria-disabled="true"><span>Resume</span></a>
+              <a className="link-square nav-link" href="/resumelink" tabIndex="-1" aria-disabled="true"><span>Resume</span></a>
             </div>
           </div>
         </div>

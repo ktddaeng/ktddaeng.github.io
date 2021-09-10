@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import '../demo.css';
 import { BLURBS } from '../shared/blurb';
 import { SKILLS } from '../shared/skills';
@@ -11,9 +12,11 @@ function Skills() {
   //makes a uniform card for each skill
   const skills = searchItems(SKILLS.skills, skillParam).map((skill, i) => {
     return (
-      <div className="card col-md-6 col-5 m-2 skill-card" key={i}>
-        <span className="align-middle">{skill.name}</span>
-      </div>
+      <CSSTransition key={i}>
+        <div className="card col-md-6 col-5 m-2 skill-card">
+          <span className="align-middle">{skill.name}</span>
+        </div>
+      </CSSTransition>
     );
   });
 
@@ -61,9 +64,9 @@ function Skills() {
       </select>
       {/* Displays the list of skills that fits the screen
         according to its size*/}
-      <div className="row justify-content-center">
+      <TransitionGroup className="row justify-content-center">
         {skills}
-      </div>
+      </TransitionGroup>
     </div>
   );
 }

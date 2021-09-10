@@ -24,7 +24,7 @@ function Contact() {
     <div className="dumContact" id="contact">
       <h1 className="display-3">{BLURBS.contact.header}</h1>
       <LoremIpsum avgSentencesPerParagraph={4}/>
-      <div className="d-grid gap-2 text-center">
+      <div className="row justify-content-center gap-2 text-center">
         {linklist}
       </div>
     </div>

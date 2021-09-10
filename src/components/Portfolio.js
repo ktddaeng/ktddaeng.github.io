@@ -14,17 +14,17 @@ function Portfolio() {
       <div className="card m-2 p-2 flex-md-row" key={i}>
         <img src="..." className="card-img-top" alt={project.name + " thumbnail"}/>
         <div className="card-body">
-          <p>{project.company}</p>
-          <h3>{project.name}</h3>
-          <div className="d-flex">
+          <div className="d-flex justify-content-between">
+            <h3>{project.name}</h3>
             {project.urls.map((url, i) => {
               return (
-                <span className="pe-2" title={url.label} key={i}>
-                  <a href={url.href} target="_blank" rel="noreferrer"><i className={url.icon}></i></a>
+                <span className="ps-2" title={url.label} key={i}>
+                  <a className="icon-link" href={url.href} target="_blank" rel="noreferrer"><i className={url.icon}></i></a>
                 </span>
               )
             })}
           </div>
+          <p className="pe-2">{project.company}</p>
           <p>{project.description}</p>
           <div className="d-flex">
             {project.skills.map((tag, i) => {

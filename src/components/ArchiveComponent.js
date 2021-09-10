@@ -23,14 +23,15 @@ function Archive() {
 
     //otherwise render proper card
     return (
-      <div className="card m-2 p-2" key={project.id} id={project.id}>
-        <div className="d-flex">
+      <div className="card m-2 p-2 col-md-5 col-sm-12" key={project.id} id={project.id}>
+        <div className="card-body">
+        <div className="d-flex justify-content-between">
           <h3>{project.name}</h3>
           <div className="ps-2">
             {project.urls.map((url, i) => {
               return (
-                <span className="pe-2" title={url.label} key={i}>
-                  <a href={url.href} target="_blank" rel="noreferrer"><i className={url.icon}></i></a>
+                <span className="ps-2" title={url.label} key={i}>
+                  <a className="icon-link" href={url.href} target="_blank" rel="noreferrer"><i className={url.icon}></i></a>
                 </span>
               )
             })}
@@ -38,7 +39,8 @@ function Archive() {
         </div>
         <p>{project.company} · {project.date}</p>
         <p>{project.description}</p>
-        <div className="d-flex">
+        </div>
+        <div className="d-flex card-footer">
           {project.skills.map((tag, i) => {
             return (
               <span className="tag me-2 p-1" key={i}>{tag}</span>
@@ -107,7 +109,7 @@ function Archive() {
   });
 
   return (
-    <div className="dum dumArchive">
+    <div className="container">
       <div className="d-flex flex-row justify-content-between">
         <h2 className="display-3">{BLURBS.archive.header}</h2>
         {/*<div className="btn btn-outline-light btn-skill"
@@ -119,7 +121,7 @@ function Archive() {
           Filter
         </div> */}
       </div>
-      <div className="my-3">      
+      <div className="my-3">
         {/* Button select to filter skills.
           Only visible for larger screens*/}
         <div className="d-none d-md-block .d-lg-none .d-xl-none text-center">
@@ -138,7 +140,7 @@ function Archive() {
           {skilldrops}
         </select>
       </div>
-      <div className="card-deck">
+      <div className="row justify-content-center">
         {projects}
       </div>
       {/*
